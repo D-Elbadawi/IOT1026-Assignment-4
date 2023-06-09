@@ -5,7 +5,7 @@ namespace Assignment;
 
 public class Robot
 {
-    // These are properties, you can replace these with traditional getters/setters if you prefer.//
+    // These are properties, you can replace these with traditional getters/setters if you prefer./////
     public int NumCommands { get; }
 
     // These properties are not good! The setter allows
