@@ -5,7 +5,7 @@ namespace Assignment;
 
 class Robot
 {
-    // These are properties, you can replace these with traditional getters/setters if you prefer.
+    // These are properties, you can replace these with traditional getters/setters if you prefer.//
     public int NumCommands { get; }
     public int X { get; set; }
     public int Y { get; set; }
