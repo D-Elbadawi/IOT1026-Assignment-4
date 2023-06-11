@@ -1,5 +1,5 @@
 ﻿using Assignment;
-using Assignment.AbstractCommand; // Change to Assignment.InterfaceCommand when rdy
+using Assignment.InterfaceCommand; // Update to Assignment.InterfaceCommand
 
 namespace AssignmentTest
 {
@@ -9,10 +9,10 @@ namespace AssignmentTest
         [TestMethod]
         public void PropertiesTest()
         {
-            Robot robot1 = new();
+            Robot robot1 = new Robot();
             Assert.AreEqual(robot1.NumCommands, 6);
             const int ExpectedCommands = 10;
-            Robot robot2 = new(ExpectedCommands);
+            Robot robot2 = new Robot(ExpectedCommands);
             Assert.AreEqual(robot2.NumCommands, ExpectedCommands);
 
             Assert.AreEqual(robot1.IsPowered, false);
