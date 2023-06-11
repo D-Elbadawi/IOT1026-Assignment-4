@@ -1,36 +1,49 @@
-﻿namespace Assignment.AbstractCommand;
+﻿using Assignment;
+using Assignment.InterfaceCommand;
 
-public abstract class RobotCommand
+public class OffCommand : IRobotCommand
 {
-    public abstract void Run(Robot robot);
+    public void Run(Robot robot) => robot.IsPowered = false;
 }
 
-public class OffCommand : RobotCommand
+public class OnCommand : IRobotCommand
 {
-    public override void Run(Robot robot) => robot.IsPowered = false;
+    public void Run(Robot robot) => robot.IsPowered = true;
 }
 
-public class OnCommand : RobotCommand
+public class WestCommand : IRobotCommand
 {
-    public override void Run(Robot robot) => robot.IsPowered = true;
+    public void Run(Robot robot)
+    {
+        if (robot.IsPowered)
+            robot.X--;
+    }
 }
 
-public class WestCommand : RobotCommand
+public class EastCommand : IRobotCommand
 {
-    public override void Run(Robot robot) { if (robot.IsPowered) robot.X--; }
+    public void Run(Robot robot)
+    {
+        if (robot.IsPowered)
+            robot.X++;
+    }
 }
 
-public class EastCommand : RobotCommand
+public class SouthCommand : IRobotCommand
 {
-    public override void Run(Robot robot) { if (robot.IsPowered) robot.X++; }
+    public void Run(Robot robot)
+    {
+        if (robot.IsPowered)
+            robot.Y--;
+    }
 }
 
-public class SouthCommand : RobotCommand
+public class NorthCommand : IRobotCommand
 {
-    public override void Run(Robot robot) { if (robot.IsPowered) robot.Y--; }
+    public void Run(Robot robot)
+    {
+        if (robot.IsPowered)
+            robot.Y++;
+    }
 }
 
-public class NorthCommand : RobotCommand
-{
-    public override void Run(Robot robot) { if (robot.IsPowered) robot.Y++; }
-}
