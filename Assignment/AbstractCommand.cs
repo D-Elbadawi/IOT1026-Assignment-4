@@ -1,6 +1,6 @@
 ﻿using Assignment;
 using Assignment.InterfaceCommand;
-
+//Remove abstract
 public class OffCommand : IRobotCommand
 {
     public void Run(Robot robot) => robot.IsPowered = false;
